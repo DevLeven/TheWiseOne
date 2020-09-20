@@ -46,12 +46,5 @@ module.exports = {
             } else {
                 message.reply('You dont have the power to use me!')
             }
-
-            try {
-                command.execute(message, args);
-            } catch (error) {
-                console.error(error);
-                message.reply('Im unable to respond to your request please check if you spelt it right or visit HDev only he can help.');
-            } 
     }
 }
