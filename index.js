@@ -61,7 +61,7 @@ bot.on("message", message => {
         command.execute(message, args);
     } catch (error) {
         console.error(error);
-        message.reply('Im unable to respond to your request please check if you splled it right or visit HDev only he can help.');
+        message.reply('Im unable to respond to your request please check if you spelt it right or visit HDev only he can help.');
     } 
  })
 
