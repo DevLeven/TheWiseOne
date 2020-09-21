@@ -33,18 +33,18 @@ module.exports = {
                     return message.reply('Please enter time I that I should put member in keep?');
                 }
 
-            const logChannel = guild.channels.find(ch => ch.name.includes('log'));
+            const logChannel = message.guild.channels.find(ch => ch.name.includes('log'));
             const muteText = `$@${person.user.username} has been sent to the keep for ${ms(ms(time))}`;
             const unmuteText = `@${person.user.username} has left the keep!`;
 
             if (!logChannel) {
                 console.log('Could not find the report tab. Creating one now...');
-                guild.createChannel('logs', {
+                message.guild.createChannel('logs', {
                     type: 'text',
                     position: 0,
                     topic: 'Report tab for the server to keep things in track!',
                     permissionOverwrites: [{
-                        id: guild.id,
+                        id: message.guild.id,
                         deny: ['SEND_MESSAGES'],
                         allow: ['READ_MESSAGE_HISTORY', 'VIEW_CHANNEL']
                     }]
