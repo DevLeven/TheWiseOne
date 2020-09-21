@@ -20,8 +20,8 @@ bot.on('ready', () => {
         .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
         .catch(console.error);
     bot.user.setStatus('dnd')
-        .then(console.log)
-        .catch(console.error);
+        //.then(console.log)
+        //.catch(console.error);
 })
 
 bot.on('guildMemberAdd', member => {
