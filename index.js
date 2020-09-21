@@ -51,7 +51,7 @@ bot.on('guildBanAdd', (guild, user) => {
     const logChannel = guild.channels.find(ch => ch.name.includes('log'));
     const banText = `${user.tag} has been exsiled from the kingdom!`;
 
-    if (!logchannel) {
+    if (!logChannel) {
         console.log('Could not find the report tab. Creating one now...');
         guild.createChannel('logs', {
                 type: 'text',
