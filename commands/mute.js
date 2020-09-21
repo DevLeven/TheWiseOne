@@ -53,22 +53,23 @@ module.exports = {
                     .catch(console.error);
             }
 
-            Promise.resolve(unbanText).then(function (unbanText) {
-                logChannel.send(unbanText); // "Success"
+            Promise.resolve(muteText).then(function (muteText) {
+                logChannel.send(muteText); // "Success"
             }, function (value) {
                 // not called
             });
 
             person.removeRole(mainrole);
             person.addRole(muterole);
-
-            message.channel.send(`@${person.user.username} has been sent to the keep for ${ms(ms(time))}`);
-            message.logChannel.send(muteText);
             setTimeout(function () {
                 person.addRole(mainrole);
                 person.removeRole(muterole);
-                message.channel.send(`@${person.user.username} has left the keep!`)
-                message.channel.send(unmuteText);
+
+                Promise.resolve(unmuteText).then(function (unmuteText) {
+                    logChannel.send(unmuteText); // "Success"
+                }, function (value) {
+                    // not called
+                });
             }, ms(time));
 
         } else {
