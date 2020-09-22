@@ -34,7 +34,7 @@ module.exports = {
                 }
 
             const logChannel = message.guild.channels.find(ch => ch.name.includes('log'));
-            const muteText = `$@${person.user.username} has been sent to the keep for ${ms(ms(time))}`;
+            const muteText = `@${person.user.username} has been sent to the keep for ${ms(ms(time))}`;
             const unmuteText = `@${person.user.username} has left the keep!`;
 
             if (!logChannel) {
