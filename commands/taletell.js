@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'say',
+    name: 'taletell',
     description: 'Says a message inputed',
     execute(message, args) {
         const sayMessage = args.join(" ");
