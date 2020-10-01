@@ -4,7 +4,7 @@ module.exports = {
     name: 'user-info',
     description: 'Shows user info when user is mentoned!',
     execute(message, args) {
-        let mentionedUser = message.mentions.members.first();
+        let mentionedMember = message.mentions.members.first();
         let mentionedUser = message.mentions.users.first();
 
         const userEmbed = new Discord.RichEmbed()
