@@ -22,7 +22,7 @@ module.exports = {
 
         if (args[0] === 'joined') {
             const joinedEmbed = new Discord.RichEmbed()
-            .setTitle(`You joined ${message.guild.name} at ${message.member.jonedAt}`);
+            .setTitle(`You joined ${message.guild.name} at ${message.member.joinedAt}`);
 
             message.channel.send(joinedEmbed).catch(err => console.log(err));
         }
