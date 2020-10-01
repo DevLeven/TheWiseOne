@@ -16,8 +16,8 @@ module.exports = {
         }
 
         const myIconEmbed = new Discord.RichEmbed()
-            .setTitle(`${message.member.username}'s Avater!`)
-            .setImage(message.member.displayAvaterURL);
+            .setTitle(`${message.author.username}'s Avater!`)
+            .setImage(message.author.displayAvaterURL);
 
         return message.channel.send(myIconEmbed).catch(err => console.log(err));
     }
