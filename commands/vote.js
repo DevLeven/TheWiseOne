@@ -22,7 +22,7 @@ module.exports = {
                         time: '15000',
                         error: ['time'],
                     })
-                    let sendToChannel = msg.first().mentions.channels.first();
+                    let sendToChannel = msg.first().mention.channel.first();
                     message.channel.send('What would you like to vote on?')
                     try {
                         let msg = await message.channel.awaitMessages(filter, {
