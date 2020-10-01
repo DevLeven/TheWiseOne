@@ -12,7 +12,7 @@ module.exports = {
             let msg = await message.channel.awaitMessages(filter, {
                 maxMatches: 1,
                 time: '15000',
-                error: ['time']
+                error: ['time'],
             })
             if (msg.first().content === 'yes') {
                 message.channel.send('What channel would you like the vote to be sent to?')
@@ -20,7 +20,7 @@ module.exports = {
                     let msg = await message.channel.awaitMessages(filter, {
                         maxMatches: 1,
                         time: '15000',
-                        error: ['time']
+                        error: ['time'],
                     })
                     let sendToChannel = msg.first().mentions.channels.first();
                     message.channel.send('What would you like to vote on?')
