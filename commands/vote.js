@@ -52,7 +52,7 @@ module.exports = {
                                     .addField(embedTopic, `\:red_circle: ${firstTopic}`)
                                     .addField(embedTopic, `\:blue_circle: ${secondTopic}`)
 
-                                sendToChannel.channel.send(voteEmbed).then(msg => msg.react('🔴')).then(reaction => reaction.message.react('🔵')).catch(err => console.log(err));
+                                sendToChannel.send(voteEmbed).then(msg => msg.react('🔴')).then(reaction => reaction.message.react('🔵')).catch(err => console.log(err));
                             } catch (ERROR) {
                                 message.channel.send('You did not respond fast enough!')
                                 console.log(ERROR);
