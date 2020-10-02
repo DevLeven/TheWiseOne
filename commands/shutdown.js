@@ -4,7 +4,6 @@ const botconfig = require('../botconfig.json');
 module.exports.config = {
     name: 'shutdown',
     description: 'stops the bot',
-    aliases: [],
     execute(message, args) {
     }
 }
