@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const botconfig = require('../botconfig.json');
 
-module.exports.config = {
+module.exports = {
     name: 'shutdown',
     description: 'stops the bot',
     async execute(message, args) {
