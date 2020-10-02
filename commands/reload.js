@@ -17,7 +17,7 @@ module.exports = {
             bot.commands.delete(commandName)
             const pull = require(`./${commandName}.js`)
             bot.commands.set(commandName, pull)
-        } catch (e) {
+        } catch(e) {
             return message.channel.send(`Could not fix: \`${args[0].toUpperCase()}\``)
         }
 
