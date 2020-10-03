@@ -16,7 +16,7 @@ module.exports = {
 
         if(!message.guild.me.hasPermission(['MANAGE_ROLES', 'ADMINISTRATOR'])) return message.channel.send('I cannot do that I need permission from a guardian ask HDev or The LEADERS!')
 
-        if(rMemeber.roles.has(role.id)) {
+        if(rMember.roles.has(role.id)) {
             return message.channel.send(`${rMember.displayname}, already has the role!`)
         } else {
            await rMember.addRole(role.id).catch(e => console.log(e.message))
