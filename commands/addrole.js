@@ -30,7 +30,7 @@ module.exports = {
         .addField('Mutee:', rMember.user.username)
         .addField('Moderator:', message.author.username)
         .addField('Reason:', reason)
-        .addField('Date:', message.createdAt.toLocale.String())
+        .addField('Date:', message.createdAt.toLocaleString())
 
             let sChannel = message.guild.channels.find(c.name === 'tnt-modlogs')
             sChannel.send(embed)
