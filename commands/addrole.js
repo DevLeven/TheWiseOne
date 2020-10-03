@@ -20,7 +20,7 @@ module.exports = {
             return message.channel.send(`${rMember.displayName}, already has the role!`)
         } else {
            await rMember.addRole(role.id).catch(e => console.log(e.message))
-           message.channel.send(`The role, ${role.name}, has been added to ${rMember.displayname}.`)
+           message.channel.send(`The role, ${role.name}, has been added to ${rMember.displayName}.`)
         }
 
         let embed = new Discord.RichEmbed()

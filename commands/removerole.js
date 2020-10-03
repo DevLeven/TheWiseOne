@@ -20,7 +20,7 @@ module.exports = {
             return message.channel.send(`${rMember.displayName}, dosent have that role!`)
         } else {
            await rMember.removeRole(role.id).catch(e => console.log(e.message))
-           message.channel.send(`The role, ${role.name}, has been removed from ${rMember.displayname}.`)
+           message.channel.send(`The role, ${role.name}, has been removed from ${rMember.displayName}.`)
         }
 
         let embed = new Discord.RichEmbed()
