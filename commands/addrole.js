@@ -32,7 +32,7 @@ module.exports = {
         .addField('Reason:', reason)
         .addField('Date:', message.createdAt.toLocaleString())
 
-            let sChannel = message.guild.channels.find(c.name === 'tnt-modlogs')
+            let sChannel = message.guild.channels.find(c => c.name === 'logs')
             sChannel.send(embed)
     }
 }
