@@ -3,6 +3,10 @@ const ms = require('ms');
 module.exports = {
     name: 'mute',
     description: 'Mutes people!',
+    usage: '!usage',
+    noalias: 'No Aliases',
+    aliases: [],
+    accessableby: 'Staff',
     execute(message, args) {
 
         if (message.member.hasPermission('MUTE_MEMBERS')) {

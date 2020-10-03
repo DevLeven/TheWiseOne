@@ -3,6 +3,10 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'vote',
     description: 'allows users to vote on specific topics!',
+    usage: '!usage',
+    noalias: 'No Aliases',
+    aliases: [],
+    accessableby: 'Staff',
     async execute(message, args) {
         message.channel.send('Would you like to create a vote?');
 

@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'user-info',
     description: 'Shows user info when user is mentoned!',
+    usage: '!usage',
+    aliases: ['ui'],
+    accessableby: 'Staff',
     execute(message, args) {
         let mentionedMember = message.mentions.members.first();
         let mentionedUser = message.mentions.users.first();

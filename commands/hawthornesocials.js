@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'hawthornesocials',
     description: 'Gives subscriber link!',
+    usage: '!usage',
+    aliases: ['hs'],
+    accessableby: 'Member',
     execute(message, args) {
         
             const HawthorneEmbed = new Discord.RichEmbed()

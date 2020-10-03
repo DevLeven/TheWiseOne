@@ -1,6 +1,10 @@
 module.exports = {
     name: 'ban',
     description: 'Chase people out of the kingdom!',
+    usage: '!usage',
+    noalias: 'No Aliases',
+    aliases: [],
+    accessableby: 'Staff',
     execute(message, args) {
 
             if (message.member.hasPermission('BAN_MEMBERS')) {

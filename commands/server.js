@@ -3,6 +3,10 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'server',
     description: 'shows info based on server!',
+    usage: '!usage',
+    noalias: 'No Aliases',
+    aliases: [],
+    accessableby: 'Member',
     execute(message, args) {
         if (args [0] === 'members') {
             const serverMembers = message.guild.memberCount;

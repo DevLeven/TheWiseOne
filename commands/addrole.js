@@ -3,6 +3,9 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'addrole',
     description: 'adds roles',
+    usage: '!usage',
+    aliases: ['ar'],
+    accessableby: 'Staff',
     async execute(message, args) {
 
         if(!message.member.hasPermission(['MANAGE_ROLES', 'ADMINISTRATOR'])) return message.channel.send('You dont have the power to control me.')
