@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'avater',
+    name: 'avatar',
     description: 'Takes someones avater and steals it.',
     execute(message, args) {
         if (args[0]) {
