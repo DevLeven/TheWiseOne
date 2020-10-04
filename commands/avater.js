@@ -3,9 +3,6 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'avater',
     description: 'Takes someones avater and steals it.',
-    usage: '!usage',
-    aliases: ['av'],
-    accessableby: 'Member',
     execute(message, args) {
         if (args[0]) {
             const user = message.mentions.users.first();

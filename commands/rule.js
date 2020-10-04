@@ -1,10 +1,6 @@
 module.exports = {
     name: 'rule',
     description: 'Provides a server rule as requested.',
-    usage: '!usage',
-    noalias: 'No Aliases',
-    aliases: [],
-    accessableby: 'Staff',
     async execute(message, args) {
         const rule = parseInt(args[0], 10);
 

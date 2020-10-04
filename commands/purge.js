@@ -1,10 +1,6 @@
 module.exports = {
     name: 'purge',
     description: 'Removes messages sent in chat.',
-    usage: '!usage',
-    noalias: 'No Aliases',
-    aliases: [],
-    accessableby: 'Staff',
     async execute(message, args) {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             const deleteCount = parseInt(args[0], 10);
