@@ -2,9 +2,17 @@ const Discord = require('discord.js');
 const { prefix, } = require('./botconfig.json');
 const ms = require('ms');
 const fs = require('fs');
-const bot = new Discord.Client();
+const bot = new Discord.Client({disableEveryone: true});
 
 bot.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.
+    endsWith('.js'));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+
+    bot.commands.set(command.name, command);
+}
 
 bot.on('ready', () => {
     console.log('The wise one has awoken.');
