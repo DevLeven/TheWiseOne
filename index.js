@@ -26,6 +26,7 @@ bot.on('ready', () => {
 
 bot.on('guildMemberAdd', member => {
     const welcomeChannel = member.guild.channels.find(ch => ch.name.includes('welcome'));
+    const rulesChannel = member.guild.channels.find(ch => ch.name.includes('rule'));
     const welcomeText = `The Dragon <@${member.user.id}> has joined ${member.guild.name} were happy your here!`
 
     if (!welcomeChannel) {
@@ -40,6 +41,20 @@ bot.on('guildMemberAdd', member => {
                 deny: ['SEND_MESSAGES']
             }]
         }).then(console.log('welcome channel created')).catch(console.error);
+    }
+
+    if (!rulesChannel) {
+        console.log('Could not find a rules channel so I am making one!');
+        member.guild.createChannel('rules', {
+            type: 'test',
+            position: 1,
+            topic: 'Rules channel for all users',
+            permissionOverwrites: [{
+                id: member.guild.id,
+                allow: ['READ_MESSAGE_HISTORY', 'READ_MESSAGES', 'VIEW_CHANNEL'],
+                deny: ['SEND_MESSAGES']
+            }]
+        }).then(console.log('Rules channel is created')).catch(console.error);
     }
 
     Promise.resolve(welcomeText).then(function (welcomeText) {
