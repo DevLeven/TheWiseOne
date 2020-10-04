@@ -1,19 +1,19 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const{ prefix, } = require('./botconfig.json');
+const { prefix, } = require('./botconfig.json');
 const ms = require('ms');
 const fs = require('fs');
-const Bot = new Discord.Client({disableEveryone: true});
+const Bot = new Discord.Client({ disableEveryone: true });
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
 fs.readdir('./commands/', (err, files) => {
 
-    if(err) console.log(err)
+    if (err) console.log(err)
 
     let jsfile = files.filter(f => f.split('.').pop() === 'js')
-    if(jsfile.length <= 0) {
+    if (jsfile.length <= 0) {
         return console.log('[LOGS] Couldnt find commands!');
     }
 
@@ -29,7 +29,7 @@ fs.readdir('./commands/', (err, files) => {
 
 
 bot.on('message', async message => {
-    if(message.author.bot || message.channel.type === 'dm') return;
+    if (message.author.bot || message.channel.type === 'dm') return;
 
     let prefix = botconfig.prefix;
     let messageArray = message.content.split('')
@@ -37,20 +37,20 @@ bot.on('message', async message => {
     let args = messageArray.slice(1);
 
 
-    if(!message.content.startsWith(prefix)) return;
-let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-if(commandfile) commandfile.run(bot,message,args)
+    if (!message.content.startsWith(prefix)) return;
+    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
+    if (commandfile) commandfile.run(bot, message, args)
 
 })
 
 
-if(!message.content.startsWith(prefix)) return;
+if (!message.content.startsWith(prefix)) return;
 let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-if(commandfile) commandfile.run(bot,message,args)
+if (commandfile) commandfile.run(bot, message, args)
 
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.
-endsWith('.js'));
+    endsWith('.js'));
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
@@ -64,8 +64,8 @@ bot.on('ready', () => {
         .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
         .catch(console.error);
     bot.user.setStatus('dnd')
-        //.then(console.log)
-        //.catch(console.error);
+    //.then(console.log)
+    //.catch(console.error);
 })
 
 bot.on('guildMemberAdd', member => {
@@ -98,15 +98,15 @@ bot.on('guildBanAdd', (guild, user) => {
     if (!logChannel) {
         console.log('Could not find the report tab. Creating one now...');
         guild.createChannel('logs', {
-                type: 'text',
-                position: 0,
-                topic: 'Report tab for the server to keep things in track!',
-                permissionOverwrites: [{
-                    id: guild.id,
-                    deny: ['SEND_MESSAGES'],
-                    allow: ['READ_MESSAGE_HISTORY', 'VIEW_CHANNEL']
-                }]
-            })
+            type: 'text',
+            position: 0,
+            topic: 'Report tab for the server to keep things in track!',
+            permissionOverwrites: [{
+                id: guild.id,
+                deny: ['SEND_MESSAGES'],
+                allow: ['READ_MESSAGE_HISTORY', 'VIEW_CHANNEL']
+            }]
+        })
             .then(console.log)
             .catch(console.error);
     }
@@ -125,15 +125,15 @@ bot.on('guildBanRemove', (guild, user) => {
     if (!logChannel) {
         console.log('Could not find the report tab. Creating one now...');
         guild.createChannel('logs', {
-                type: 'text',
-                position: 0,
-                topic: 'Report tab for the server to keep things in track!',
-                permissionOverwrites: [{
-                    id: guild.id,
-                    deny: ['SEND_MESSAGES'],
-                    allow: ['READ_MESSAGE_HISTORY', 'VIEW_CHANNEL']
-                }]
-            })
+            type: 'text',
+            position: 0,
+            topic: 'Report tab for the server to keep things in track!',
+            permissionOverwrites: [{
+                id: guild.id,
+                deny: ['SEND_MESSAGES'],
+                allow: ['READ_MESSAGE_HISTORY', 'VIEW_CHANNEL']
+            }]
+        })
             .then(console.log)
             .catch(console.error);
     }
@@ -153,14 +153,14 @@ bot.on("message", message => {
     const commandName = args.shift().toLowerCase();
 
     const command = bot.commands.get(commandName) || bot.commands.find
-    (cmd => cmd.aliases && cmd.aliases.includes(commandName));
+        (cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
     try {
         command.execute(message, args);
     } catch (error) {
         console.error(error);
         message.reply('Im unable to respond to your request please check if you spelt it right or visit HDev only he can help.');
-    } 
- })
+    }
+})
 
 bot.login(process.env.token);
