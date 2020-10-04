@@ -38,7 +38,7 @@ if (!args[0]) {
 }
 }
 
-module.exprts.config = {
+module.exports.config = {
     name: 'help',
     description: 'helps user figure out diffrent commands!',
     usage: '!usage',
