@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
 const { prefix, } = require('./botconfig.json');
 const ms = require('ms');
 const fs = require('fs');
-const Bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client({disableEveryone: true});
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
@@ -14,7 +13,7 @@ fs.readdir('./commands/', (err, files) => {
 
     let jsfile = files.filter(f => f.split('.').pop() === 'js')
     if(jsfile.length <= 0) {
-        return console.log('[LOGS] Couldnt find commands!');
+         return console.log('[LOGS] Couldnt find commands!');
     }
 
     jsfile.forEach((f, i,) => {
