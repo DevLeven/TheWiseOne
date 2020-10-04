@@ -27,7 +27,7 @@ bot.on('ready', () => {
 bot.on('guildMemberAdd', member => {
     const welcomeChannel = member.guild.channels.find(ch => ch.name.includes('welcome'));
     const rulesChannel = member.guild.channels.find(ch => ch.name.includes('rule'));
-    const welcomeText = `The Dragon <@${member.user.id}> has joined ${member.guild.name} were happy your here!`
+    const welcomeText = `The Dragon <@${member.user.id}> has joined ${member.guild.name} were happy your here!\n\n Please make sure you read ${rulesChannel}!`
 
     if (!welcomeChannel) {
         console.log('Could not find the entrence so i made one!');
