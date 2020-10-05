@@ -29,9 +29,9 @@ module.exports = {
 
             if (rule === 10) return message.channel.send('Dont constantly beg for nitro,roles,items or anything of that sort!');
             
-            if (rule === 11) return message.channel.send('Read the terms of discord\n**https://discordapp.com/terms!**');
+            if (rule === term) return message.channel.send('Read the terms of discord\n**https://discordapp.com/terms!**');
             
-            if (rule === 12) return message.channel.send('Read the guidlines of discord\n**https://discordapp.com/guidelines**');
+            if (rule === guidelines) return message.channel.send('Read the guidlines of discord\n**https://discordapp.com/guidelines**');
         }
     }
 }
