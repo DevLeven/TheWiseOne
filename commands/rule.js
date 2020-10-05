@@ -4,7 +4,6 @@ module.exports = {
     async execute(message, args) {
         const rule = parseInt(args[0], 10);
         
-        if (message.member.hasPermission('WARN_MEMBERS')) {
 
         if (!rule || rule < 1 || rule > 12) return message.reply('Which rule do you want me to clearify pick between 1, 10 or the discord guidelines/terms!');
 
@@ -36,5 +35,4 @@ module.exports = {
             if (rule === 12) return message.channel.send('Read the guidlines of discord\n**https://discordapp.com/guidelines**');
         }
     }
-}
 }
