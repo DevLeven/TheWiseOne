@@ -1,3 +1,5 @@
 {
     "prefix": "*"
+    'TERM': '11'
+    'GUIDELINES': '12'
 }
