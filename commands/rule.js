@@ -3,8 +3,8 @@ module.exports = {
     description: 'Provides a server rule as requested.',
     async execute(message, args) {
         const rule = parseInt(args[0], 10);
-        const TERM = ('11');
-        const GUIDELINES = ('12');
+        
+        if (message.member.hasPermission('WARN_MEMBERS')) {
 
         if (!rule || rule < 1 || rule > 12) return message.reply('Which rule do you want me to clearify pick between 1, 10 or the discord guidelines/terms!');
 
@@ -31,9 +31,10 @@ module.exports = {
 
             if (rule === 10) return message.channel.send('Dont constantly beg for nitro,roles,items or anything of that sort!');
             
-            if (rule === TERM) return message.channel.send('Read the terms of discord\n**https://discordapp.com/terms!**');
+            if (rule === 11) return message.channel.send('Read the terms of discord\n**https://discordapp.com/terms!**');
             
-            if (rule === GUIDELINES) return message.channel.send('Read the guidlines of discord\n**https://discordapp.com/guidelines**');
+            if (rule === 12) return message.channel.send('Read the guidlines of discord\n**https://discordapp.com/guidelines**');
         }
     }
+}
 }
