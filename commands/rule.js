@@ -4,7 +4,7 @@ module.exports = {
     async execute(message, args) {
         const rule = parseInt(args[0], 12);
 
-        if (!rule || rule < 1 || rule > 12) return message.reply('Which rule do you want me to clearify pick between 1, 10 or the discord guidelines/terms!');
+        if (!rule || rule < 1 || rule > 13) return message.reply('Which rule do you want me to clearify pick between 1, 10 or the discord guidelines/terms!');
 
         if(rule) {
             const botChannel = await message.guild.channels.find(ch => ch.name.includes('command'));
